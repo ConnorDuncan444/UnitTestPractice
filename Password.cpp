@@ -42,14 +42,6 @@ bool Password::has_mixed_case(string str){
 		}
 	}
 	return is_lower && is_upper;
-
-
-
-
-
-
-
-
 }
 
 unsigned int Password::unique_characters(string str){

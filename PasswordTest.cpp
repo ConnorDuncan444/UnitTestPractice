@@ -108,6 +108,36 @@ TEST(PasswordTest, oops_just_numbers_password)
 }
 
 // UNIQ CHARACTER TESTS
+TEST(PasswordTest, simple_unique_characters)
+{
+	Password my_password;
+	int actual = my_password.unique_characters("abcde");
+	ASSERT_EQ(5, actual);
+
+}
+TEST(PasswordTest, complex_unique_characters)
+{
+	Password my_password;
+	int actual = my_password.unique_characters("aaAAbCCCbbbaaCD");
+	ASSERT_EQ(5, actual);
+
+}
+TEST(PasswordTest, special_characters_and_numbers)
+{
+	Password my_password;
+	int actual = my_password.unique_characters("password13$&");
+	ASSERT_EQ(11, actual);
+
+}
+TEST(PasswordTest, character_run)
+{
+	Password my_password;
+	int actual = my_password.unique_characters("aaaaaaaaaaaaaa");
+	ASSERT_EQ(1, actual);
+
+}
+
+
 
 
 
